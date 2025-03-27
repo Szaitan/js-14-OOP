@@ -59,4 +59,8 @@ console.log(mike.hasOwnProperty('firstName')); // true
 console.log(mike.hasOwnProperty('species')); // false
 
 // This returns information regarding the function constructor which was used to create this instance
-console.log(mike.__proto__.constructor);
+console.log(Person);
+console.log(mike);
+
+// WHAT IS IMPORTANT TO REMEMBER IS THAT PROTOTYPE CHAIN WORKS SIMILAR TO SCOPE CHAIN
+// INSTEAD OF FINDING VARIABLES ITS TRY TO FIND PROPERTYS
