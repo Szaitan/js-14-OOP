@@ -25,12 +25,19 @@ console.log(john);
 // using instaceof
 console.log(john instanceof Person); // true
 
-// To add function which should be used by shared with all objects we do:
+// Adding function to prototype object
+// What we do, we are adding function to prototype object which is inside of the Person object:
+
 Person.prototype.calcAge = function () {
   return 2025 - this.birthYear;
 };
 
-// To add property to prototype
+// Object { firstName: "Jhon", birthYear: 1890 }
+//birthYear: 1890
+//firstName: "Jhon"
+//<prototype>: Object { calcAge: calcAge(), species: "Homo Sapiens", … }
+
+// Adding property to prototype object
 Person.prototype.species = 'Homo Sapiens';
 
 console.log(mike.calcAge()); // 35
@@ -41,6 +48,7 @@ console.log(mike.__proto__);
 console.log(mike.__proto__ === Person.prototype); // true
 
 // To check if prototype is a property of linked objects
+// Prototype property exists only on constructor functions!!!
 console.log(Person.prototype.isPrototypeOf(mike)); // true
 console.log(Person.prototype.isPrototypeOf(john)); // true
 
@@ -49,3 +57,6 @@ console.log(mike, john);
 // Because species is property shared via prototype it return false
 console.log(mike.hasOwnProperty('firstName')); // true
 console.log(mike.hasOwnProperty('species')); // false
+
+// This returns information regarding the function constructor which was used to create this instance
+console.log(mike.__proto__.constructor);
