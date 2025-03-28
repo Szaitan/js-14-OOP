@@ -1,5 +1,6 @@
 'use strict';
 
+//Function expression
 const Car = function () {
   this.make = 0;
   this.speed = 0;
@@ -21,6 +22,7 @@ const car2 = new Car();
 car1.accelerate();
 car2.break();
 
+// Function declaration
 function Car2() {
   this.make = 0;
   this.speed = 0;
