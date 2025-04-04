@@ -39,3 +39,39 @@ EV.prototype.accelerate = function () {
 const electricCar = new EV(90);
 electricCar.accelerate().accelerate();
 console.log(electricCar);
+console.log(electricCar.__proto__ === EV.prototype);
+console.log(electricCar.__proto__.__proto__ === Car.prototype);
+
+////////////////////////////////////////////
+const Animal = function (name) {
+  this.name = name;
+  this.speed = 10;
+};
+
+Animal.prototype.run = function (speed) {
+  this.speed = speed;
+  console.log(`${this.name} is running at ${this.speed} km/h`);
+};
+
+Animal.prototype.stop = function () {
+  this.speed = 0;
+  console.log(`${this.name} has stopped`);
+};
+
+const Bird = function (name) {
+  Animal.call(this, name);
+  this.canFly = true;
+};
+
+Bird.prototype = Object.create(Animal.prototype);
+Bird.prototype.constructor = Bird;
+
+Bird.prototype.fly = function () {
+  this.canFly
+    ? console.log(`${this.name} can fly`)
+    : console.log(`${this.name} cant fly`);
+};
+
+const kiwi = new Bird('Kiwi');
+kiwi.stop();
+kiwi.run(100);
