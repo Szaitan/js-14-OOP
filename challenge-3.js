@@ -75,3 +75,4 @@ Bird.prototype.fly = function () {
 const kiwi = new Bird('Kiwi');
 kiwi.stop();
 kiwi.run(100);
+asd;
