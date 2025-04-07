@@ -18,5 +18,6 @@ const PersonProto = {
 // To create object we use
 // The proto property is exaclty PersonProto class
 const sasha = Object.create(PersonProto);
+console.log(sasha);
 sasha.innit('Sasha', 1990);
 sasha.calcAge(); //47
