@@ -21,6 +21,10 @@ StudentProto.init = function (firstName, birthYear, course) {
   this.course = course;
 };
 
+StudentProto.test = function () {
+  console.log('this is test');
+};
+
 const mikeStudent = Object.create(StudentProto);
 mikeStudent.init('Mike', 1990, 'Biology');
 console.log(mikeStudent);
