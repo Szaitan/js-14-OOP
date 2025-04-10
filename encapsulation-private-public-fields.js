@@ -23,10 +23,12 @@ class Account {
   // This is public method
   deposit(val) {
     this.movements.push(val);
+    return this;
   }
 
   withdraw(val) {
     this.deposit(-val);
+    return this;
   }
 
   // Private method
@@ -41,6 +43,7 @@ class Account {
       this.deposit(val);
       console.log(`Loan approved.`);
     }
+    return this;
   }
 
   test() {
